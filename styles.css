@@ -1118,6 +1118,7 @@ dialog.sheet-dialog {
   margin-inline: auto;
   inline-size: min(100%, var(--max-width));
   max-inline-size: 100%;
+  block-size: auto;
   max-block-size: 88dvh;
   padding: 0;
   border: none;
@@ -1125,6 +1126,7 @@ dialog.sheet-dialog {
   border-radius: 10px 10px 0 0;
   background: var(--bg-paper);
   color: var(--ink-primary);
+  overflow: hidden;
 }
 
 dialog.sheet-dialog[open] {
@@ -1145,6 +1147,7 @@ dialog::backdrop {
 }
 
 .sheet-header {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1162,26 +1165,33 @@ dialog::backdrop {
 }
 
 .sheet-close {
+  flex-shrink: 0;
   min-block-size: 40px;
-  min-inline-size: 56px;
+  min-inline-size: 76px;
   padding: 0 var(--space-3);
-  border: 1px solid var(--line-hairline);
+  border: 1.5px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  background: var(--bg-paper);
-  color: var(--ink-primary);
+  background: var(--ink-primary);
+  color: var(--surface-card);
   font-family: inherit;
-  font-size: 0.84rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 800;
   cursor: pointer;
 }
 
 .sheet-doc-switcher {
+  flex: 0 0 auto;
   display: flex;
   overflow-x: auto;
   gap: var(--space-1);
   padding: var(--space-2) var(--space-4);
   background: var(--surface-subtle);
   border-block-end: 1px solid var(--line-hairline);
+  scrollbar-width: thin;
+}
+
+.sheet-doc-switcher[hidden] {
+  display: none;
 }
 
 .sheet-doc-pill {
@@ -1207,10 +1217,34 @@ dialog::backdrop {
 .sheet-body {
   padding: var(--space-4);
   overflow-y: auto;
-  flex: 1;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+  min-block-size: 0;
+  overscroll-behavior: contain;
   font-size: 0.94rem;
   line-height: 1.7;
   word-break: keep-all;
+}
+
+.sheet-footer {
+  flex: 0 0 auto;
+  padding: var(--space-2) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+  background: var(--surface-card);
+  border-block-start: 1px solid var(--line-hairline);
+}
+
+.sheet-footer-close {
+  display: block;
+  inline-size: 100%;
+  min-block-size: 44px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  color: var(--ink-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .sheet-body h2 {

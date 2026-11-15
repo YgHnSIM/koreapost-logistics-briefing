@@ -232,6 +232,12 @@ function openGlossaryModal(termKey) {
 }
 
 document.addEventListener("click", (e) => {
+  const closeSheetBtn = e.target.closest("[data-close-sheet]");
+  if (closeSheetBtn) {
+    sheetDialog.close();
+    return;
+  }
+
   const deepBtn = e.target.closest("[data-open-deep]");
   if (deepBtn) {
     openDeepDiveModal(deepBtn.dataset.openDeep);

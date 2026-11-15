@@ -609,9 +609,7 @@
   <dialog id="sheet-dialog" class="sheet-dialog" closedby="any" aria-labelledby="sheet-title">
     <div class="sheet-header">
       <h2 id="sheet-title" class="sheet-title">상세 보기</h2>
-      <form method="dialog">
-        <button type="submit" class="sheet-close">닫기</button>
-      </form>
+      <button type="button" class="sheet-close" data-close-sheet aria-label="모달 창 닫기">✕ 닫기</button>
     </div>
     <div id="sheet-doc-switcher" class="sheet-doc-switcher" hidden aria-label="서면 전환">
       <button type="button" class="sheet-doc-pill" data-switch-filing="objection" aria-pressed="false">1. 이의신청서</button>
@@ -620,6 +618,9 @@
       <button type="button" class="sheet-doc-pill" data-switch-filing="supp2" aria-pressed="false">4. 2차 보충</button>
     </div>
     <div id="sheet-body" class="sheet-body" tabindex="0"></div>
+    <div class="sheet-footer">
+      <button type="button" class="sheet-footer-close" data-close-sheet>창 닫기 (본문으로 돌아가기)</button>
+    </div>
   </dialog>
 
   <!-- Native Glossary <dialog> for Inline Legal Terms -->
