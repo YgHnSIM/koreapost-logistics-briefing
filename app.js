@@ -1,11 +1,11 @@
 import { GLOSSARY, DEEP_DIVES, FILINGS } from "./data.js";
 
 const STEP_TITLES = {
-  1: "1분 핵심 요약",
-  2: "궁극적 목적과 3대 사업재편",
+  1: "1분 승소 요약",
+  2: "교섭 출발점과 3대 사업재편",
   3: "전 서면 4대 필승 논리",
-  4: "5단계 공방 일지",
-  5: "제출 서면 전문 및 공유"
+  4: "6단계 승소 일지",
+  5: "공식 성명서·서면 전문 및 공유"
 };
 
 /* ==========================================================================
@@ -37,7 +37,7 @@ function goToStep(stepNumber, { pushHash = true, focusMain = false } = {}) {
 
   progressFill.style.setProperty("--progress", `${step * 20}%`);
   headerStepBadge.textContent = `${step} / 5 단계`;
-  document.title = `${STEP_TITLES[step]} | 우정사업본부 원청교섭 브리핑`;
+  document.title = `${STEP_TITLES[step]} | 이제 우본과 직접교섭이다`;
 
   if (pushHash && location.hash !== `#step-${step}`) {
     history.replaceState(null, "", `#step-${step}`);
@@ -301,8 +301,8 @@ function showToast(message) {
 shareBtn?.addEventListener("click", async () => {
   const shareUrl = location.href.split("#")[0];
   const shareData = {
-    title: "우정사업본부 원청 직접교섭 시정신청 브리핑",
-    text: "우체국물류지원단 물류노동조합의 원청 직접교섭 투쟁 경과와 핵심 근거를 확인하세요.",
+    title: "이제 우본과 직접교섭이다 | 인천지노위 승소 브리핑",
+    text: "2026.11.23. 인천지노위 원청교섭 참여 인정 결정! 우체국물류지원단 물류노동조합 공식 성명서와 승소 경과를 확인하세요.",
     url: shareUrl
   };
 

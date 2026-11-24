@@ -305,6 +305,10 @@ body {
   background-color: var(--accent-postal-soft);
 }
 
+.status-cell--ok {
+  background-color: var(--accent-ok-soft);
+}
+
 .status-step-tag {
   display: block;
   font-family: var(--font-mono);
@@ -315,6 +319,10 @@ body {
 
 .status-cell--active .status-step-tag {
   color: var(--accent-postal);
+}
+
+.status-cell--ok .status-step-tag {
+  color: var(--accent-ok);
 }
 
 .status-step-name {
@@ -500,6 +508,12 @@ body {
   border-inline-start: 4px solid var(--accent-postal);
 }
 
+.stage-block--ok {
+  border-color: var(--accent-ok);
+  border-inline-start: 4px solid var(--accent-ok);
+  background: var(--accent-ok-soft);
+}
+
 .stage-kicker {
   display: inline-block;
   font-family: var(--font-mono);
@@ -507,6 +521,10 @@ body {
   font-weight: 800;
   color: var(--accent-postal);
   margin-block-end: var(--space-1);
+}
+
+.stage-block--ok .stage-kicker {
+  color: var(--accent-ok);
 }
 
 .stage-block--stage2 .stage-kicker {
@@ -582,6 +600,10 @@ body {
   border-radius: 3px;
   background: var(--ink-primary);
   color: var(--surface-card);
+}
+
+.reorg-tag--agenda {
+  background: var(--accent-postal);
 }
 
 .reorg-name {
@@ -777,6 +799,11 @@ body {
   border-color: var(--accent-postal);
 }
 
+.family-row--won {
+  background: var(--accent-ok-soft);
+  border-color: var(--accent-ok);
+}
+
 .family-name {
   font-size: 0.9rem;
   font-weight: 800;
@@ -934,6 +961,31 @@ body {
   background: var(--surface-subtle);
 }
 
+.doc-btn--featured {
+  grid-column: 1 / -1;
+  background: var(--accent-ok-soft);
+  border-color: var(--accent-ok);
+  border-inline-start: 4px solid var(--accent-ok);
+}
+
+.doc-btn--featured:hover {
+  background: #e1f2e9;
+}
+
+.doc-btn--featured .doc-date {
+  color: var(--accent-ok);
+}
+
+.doc-btn--ref {
+  grid-column: 1 / -1;
+  background: var(--surface-subtle);
+  border-color: var(--line-hairline);
+}
+
+.doc-btn--ref .doc-date {
+  color: var(--ink-secondary);
+}
+
 .doc-date {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -979,6 +1031,11 @@ body {
   background: var(--accent-postal-soft);
 }
 
+.future-step--done {
+  border-color: var(--accent-ok);
+  background: var(--accent-ok-soft);
+}
+
 .future-tag {
   font-family: var(--font-mono);
   font-size: 0.74rem;
@@ -989,6 +1046,10 @@ body {
 
 .future-step--now .future-tag {
   color: var(--accent-postal);
+}
+
+.future-step--done .future-tag {
+  color: var(--accent-ok);
 }
 
 .future-text {
@@ -1279,6 +1340,14 @@ dialog::backdrop {
   margin: var(--space-3) 0;
   font-size: 0.82rem;
   background: var(--surface-card);
+}
+
+.sheet-body caption {
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  margin-block-end: 6px;
 }
 
 .sheet-body th,
